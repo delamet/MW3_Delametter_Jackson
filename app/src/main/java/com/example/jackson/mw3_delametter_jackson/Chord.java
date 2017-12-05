@@ -1,10 +1,12 @@
 package com.example.jackson.mw3_delametter_jackson;
 
+import java.io.Serializable;
+
 /**
  * Created by Jackson on 12/3/2017.
  */
 
-public class Chord {
+public class Chord implements Serializable{
 
     private String chordName;
     private String string1;
@@ -28,4 +30,19 @@ public class Chord {
         return (string4 + string3 + string2 + string1) + "";
     }
 
+    public String getString1() {
+        return string1;
+    }
+
+    public String getString2() {
+        return string2;
+    }
+
+    public String getString3() {
+        return string3;
+    }
+
+    public String getString4() {
+        return string4;
+    }
 }

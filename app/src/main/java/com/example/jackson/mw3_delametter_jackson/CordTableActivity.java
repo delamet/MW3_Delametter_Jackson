@@ -88,13 +88,6 @@ public class CordTableActivity extends AppCompatActivity {
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.chord_cell, parent, false);
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(), ChordActivity.class);
-                    startActivity(intent);
-                }
-            });
             return new ChordViewHolder(view);
         }
 
@@ -102,8 +95,7 @@ public class CordTableActivity extends AppCompatActivity {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             ChordViewHolder chordViewHolder = (ChordViewHolder) holder;
             Chord chord = chordsList.get(position);
-            chordViewHolder.setChordNameView(chord);
-            chordViewHolder.setFretText(chord);
+            chordViewHolder.setChord(chord);
         }
 
         @Override
@@ -116,6 +108,7 @@ public class CordTableActivity extends AppCompatActivity {
 
         private TextView chordNameView;
         private TextView fretView;
+        private Chord chord;
 
         private ChordViewHolder(View itemView) {
             super(itemView);
@@ -123,12 +116,17 @@ public class CordTableActivity extends AppCompatActivity {
             fretView = (TextView) itemView.findViewById(R.id.chordFretText);
         }
 
-        private void setChordNameView(Chord chord) {
+        private void setChord(Chord selectedChord) {
+            chord = selectedChord;
             chordNameView.setText(chord.getChordName());
-        }
-
-        private void setFretText(Chord chord) {
             fretView.setText(chord.getChordFretList());
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = ChordActivity.getChordActivityIntent(chord, getApplicationContext());
+                    startActivity(intent);
+                }
+            });
         }
     }
 }
