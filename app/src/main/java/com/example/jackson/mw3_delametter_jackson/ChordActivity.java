@@ -34,7 +34,6 @@ public class ChordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chord);
-        getSupportActionBar().setTitle("Chord");
         chordNameView = (TextView) findViewById(R.id.chordNameView);
         Intent intent = getIntent();
         chord = (Chord) intent.getSerializableExtra(CHORD_ID);

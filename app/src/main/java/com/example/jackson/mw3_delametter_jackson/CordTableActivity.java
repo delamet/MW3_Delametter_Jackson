@@ -48,10 +48,33 @@ public class CordTableActivity extends AppCompatActivity {
         Chord aChord = new Chord("A", 2, 1, 0, 0);
         Chord bChord = new Chord("B", 4, 3, 2, 2);
         Chord cChord = new Chord("C", 0, 0, 0, 3);
-        tempList.add(aChord);
+        Chord dChord = new Chord("D", 2, 2, 2, 0);
+        Chord eChord = new Chord("E", 1, 4, 0, 2);
+        Chord fChord = new Chord("f", 2, 0, 1, 0);
+        Chord gChord = new Chord("G", 0, 2, 3, 2);
+        Chord amChord = new Chord("AM", 2, 0, 0, 0);
+        Chord bmChord = new Chord("BM", 4, 2, 2, 2);
+        Chord cmChord = new Chord("CM", 0, 3, 3, 3);
+        Chord dmChord = new Chord("DM", 2, 2, 1, 0);
+        Chord emChord = new Chord("EM", 0, 4, 3, 2);
+        Chord fmChord = new Chord("FM", 1, 0, 1, 3);
+        chordsList.add(aChord);
+        chordsList.add(bChord);
+        chordsList.add(cChord);
+        chordsList.add(dChord);
+        chordsList.add(eChord);
+        chordsList.add(fChord);
+        chordsList.add(gChord);
+        chordsList.add(amChord);
+        chordsList.add(bmChord);
+        chordsList.add(cmChord);
+        chordsList.add(dmChord);
+        chordsList.add(emChord);
+        chordsList.add(fmChord);
+        /*tempList.add(aChord);
         tempList.add(bChord);
-        tempList.add(cChord);
-        shuffleChords(tempList);
+        tempList.add(cChord);*/
+        //shuffleChords(tempList);
     }
 
     private void shuffleChords(ArrayList<Chord> list) {
