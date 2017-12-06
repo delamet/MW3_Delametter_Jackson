@@ -12,7 +12,7 @@
         <activity
             android:name=".CordTableActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,8 @@
         <activity
             android:name=".ChordActivity"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".CordTableActivity"
+            android:theme="@style/AppTheme">
         </activity>
     </application>
 
